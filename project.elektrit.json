@@ -1,0 +1,34 @@
+{
+  "format": "elektrit-github-project",
+  "version": 1,
+  "project": {
+    "version": 1,
+    "code": "const unsigned long BLINK_INTERVAL_MS = 500;\n\nvoid setup() {\n  pinMode(LED_BUILTIN, OUTPUT);\n}\n\nvoid loop() {\n  digitalWrite(LED_BUILTIN, HIGH);\n  delay(BLINK_INTERVAL_MS);\n  digitalWrite(LED_BUILTIN, LOW);\n  delay(BLINK_INTERVAL_MS);\n}\n",
+    "circuit": {
+      "format": "elektrit-circuit",
+      "revision": 1,
+      "grid": {
+        "size": 9.6,
+        "origin": "center"
+      },
+      "components": [
+        {
+          "key": "uno",
+          "kind": "arduino-uno",
+          "position": {
+            "column": 0,
+            "row": 0
+          }
+        }
+      ],
+      "wires": []
+    },
+    "fqbn": "arduino:avr:uno",
+    "libraries": [],
+    "readme": "Projekt do ręcznego sprawdzenia importu i zapisu przez integrację GitHub w Elektrit. Jedna płytka Arduino UNO, bez dodatkowych bibliotek i przewodów. Wbudowana dioda L powinna świecić przez 500 ms i gasnąć na 500 ms. Plik został sprawdzony walidatorem formatu; działania w przeglądarce jeszcze nie zweryfikowano.",
+    "learningMaterial": "# Test powiązania GitHub\n\n## Cel i elementy\nProjekt służy do sprawdzenia, czy import i zapis na GitHubie zachowują program, układ, opis i tę lekcję. Wykorzystuje jedną płytkę Arduino UNO oraz jej wbudowaną diodę L na wyjściu D13. Nie wymaga zewnętrznej diody, przewodów ani dodatkowych bibliotek.\n\n## Działanie programu\nKompletny program znajduje się w zakładce Kod. Instrukcja `pinMode(LED_BUILTIN, OUTPUT);` ustawia wyjście sterujące diodą. Stała `BLINK_INTERVAL_MS = 500` wyznacza czas każdego stanu w milisekundach. Kolejne wywołania `digitalWrite` ustawiają HIGH i LOW, rozdzielone opóźnieniem o tej wartości. Oczekiwany pełny cykl trwa sekundę. Zmniejszenie stałej do 250 skróci cykl do pół sekundy.\n\n## Uruchomienie i sprawdzenie powiązania\nPo imporcie uruchom symulację i obserwuj diodę L. Zatrzymaj symulację, zmień tytuł lub opis, a następnie sprawdź docelowy plik w oknie GitHub i potwierdź zapis. Po ponownym imporcie sprawdź, czy wróciły zmienione dane. Jeśli plik nie jest widoczny, sprawdź wybraną gałąź, ścieżkę project.elektrit.json i dostęp aplikacji GitHub do repozytorium. Jeśli dioda nie zmienia stanu, sprawdź, czy symulacja jest uruchomiona i czy program nadal używa LED_BUILTIN.\n\nFormat pliku sprawdzono lokalnym walidatorem. Zachowanie symulacji i pełny import oraz zapis wymagają jeszcze testu w przeglądarce.\n",
+    "projectTitle": "Test powiązania GitHub — Elektrit",
+    "preserveLayout": true,
+    "wireLabelsVisible": true
+  }
+}
